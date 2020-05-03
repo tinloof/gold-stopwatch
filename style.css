@@ -1,0 +1,66 @@
+body {
+    background-color:  #2C3347;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.root {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.stopwatch {
+    width: 443px;
+    padding-top: 23px;
+    
+    display: grid;
+    grid-row-gap: 23px;
+    justify-items: center;
+}
+
+h1 {
+    font-size: 48px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    text-align: center;
+    line-height: 59px;
+    color: white;
+
+    padding: 0 64px;
+    margin: 0;
+}
+
+.gold {
+    color: #F2C94C;
+    font-weight: 900;
+}
+
+.circle {
+    display:flex;
+    justify-content: space-around;
+
+    height: 239px;
+    width: 239px;
+
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+.time {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    text-align: center;
+    line-height: 239px;
+    color: white;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 187px;
+}
