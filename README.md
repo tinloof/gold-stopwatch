@@ -2,7 +2,7 @@
 
 👉[Demo](https://gold-stopwatch.netlify.app/)
 
-This is a timer I have created from scratch using HTML / CSS / JS.
+This is a stopwatch I have created from scratch using HTML / CSS / JS.
 
 <p align="left">
     <img src="screenshot.png" height="300px">
