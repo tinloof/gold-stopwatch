@@ -2,7 +2,7 @@
 
 This is a timer I have created from scratch using HTML / CSS / JS.
 
-<p align="center">
+<p align="left">
     <img src="screenshot.png" height="300px">
 </p>
 
