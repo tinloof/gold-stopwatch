@@ -2,6 +2,22 @@
   box-sizing: border-box;
 }
 
+button.buttonPlay {
+    background: transparent;
+    padding: 0;
+    border: none;
+    margin: 0;
+    outline: none;
+}
+
+button.buttonReset {
+    background: transparent;
+    padding: 0;
+    border: none;
+    margin: 0;
+    outline: none;
+}
+
 body {
   background: linear-gradient(
     -45deg,
