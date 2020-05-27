@@ -28,11 +28,15 @@ let startTime;
 
 // Create "start", "pause" and "reset" functions
 
+function print(txt) {
+    document.getElementById("display").innerHTML = txt;
+}
+
 function start() {
     startTime = Date.now() - elapsedTime;
     timerInterval = setInterval(function printTime() {
         elapsedTime = Date.now() - startTime;
-        document.getElementById("display").innerHTML = timeToTimerString(elapsedTime);
+        print(timeToTimerString(elapsedTime));
     }, 10);
 }
 
@@ -42,7 +46,7 @@ function pause() {
 
 function reset() {
     clearInterval(timerInterval);
-    document.getElementById("display").innerHTML = "00:00:00";
+    print("00:00:00");
     elapsedTime = 0;
 }
 
