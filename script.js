@@ -38,10 +38,12 @@ function start() {
     elapsedTime = Date.now() - startTime;
     print(timeToTimerString(elapsedTime));
   }, 10);
+  showButton("PAUSE");
 }
 
 function pause() {
   clearInterval(timerInterval);
+  showButton("PLAY");
 }
 
 function reset() {
@@ -63,15 +65,9 @@ function showButton(buttonKey) {
   buttonToHide.style.display = "none";
 }
 
-playButton.addEventListener("click", (e) => {
-  start();
-  showButton("PAUSE");
-});
+playButton.addEventListener("click", start);
 
-pauseButton.addEventListener("click", (e) => {
-  pause();
-  showButton("PLAY");
-});
+pauseButton.addEventListener("click", pause);
 
 document.getElementById("resetButton").addEventListener("click", (e) => {
   reset();
