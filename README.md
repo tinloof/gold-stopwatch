@@ -1,4 +1,4 @@
-# Gold Timer (Stopwatch)
+# Gold Stopwatch
 
 👉[Demo](https://gold-stopwatch.netlify.app/)
 
