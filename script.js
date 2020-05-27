@@ -17,11 +17,7 @@ function timeToTimerString(time) {
 // Format time so it is double-digit
 
 function formatTwoDigits(n) {
-    if (n < 10) {
-        return n = "0" + n;
-    } else {
-        return n;
-    }
+    return (n < 10 ? n = "0" + n : n)
 }
 
 // Declare variables to use in our functions below
