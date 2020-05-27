@@ -1,4 +1,4 @@
-//Convert time to a format of hours, minutes, and seconds
+// Convert time to a format of hours, minutes, and seconds
 
 function timeToTimerString(time) {
     let diffHours = time / (1000 * 60 * 60);
@@ -14,7 +14,7 @@ function timeToTimerString(time) {
     return `${minutes}:${seconds}:${milliseconds}`;
 }
 
-//Format time so it is double-digit
+// Format time so it is double-digit
 
 function formatTwoDigits(n) {
     if (n < 10) {
@@ -24,13 +24,13 @@ function formatTwoDigits(n) {
     }
 }
 
-//Declare variables to use in our functions below
+// Declare variables to use in our functions below
 
 let timerInterval;
 let elapsedTime = 0;
 let startTime;
 
-//Create "start", "pause" and "reset" functions
+// Create "start", "pause" and "reset" functions
 
 function start() {
     startTime = Date.now() - elapsedTime;
@@ -50,7 +50,7 @@ function reset() {
     elapsedTime = 0;
 }
 
-//Create variables for the buttons we will click on and create event listeners
+// Create variables for the buttons we will click on and create event listeners
 
 let playButton = document.getElementById("playButton");
 let pauseButton = document.getElementById("pauseButton");
