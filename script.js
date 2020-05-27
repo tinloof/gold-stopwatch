@@ -4,12 +4,14 @@ function timeToTimerString(time) {
     let diffHours = time / (1000 * 60 * 60);
     let diffMinutes = (diffHours - Math.floor(diffHours)) * 60;
     let diffSeconds = (diffMinutes - Math.floor(diffMinutes)) * 60;
+    let diffMilliseconds = (diffSeconds - Math.floor(diffSeconds)) * 100;
 
     let hours = formatTwoDigits(Math.floor(diffHours));
     let minutes = formatTwoDigits(Math.floor(diffMinutes));
     let seconds = formatTwoDigits(Math.floor(diffSeconds));
+    let milliseconds = formatTwoDigits(Math.floor(diffMilliseconds));
 
-    return `${hours}:${minutes}:${seconds}`;
+    return `${minutes}:${seconds}:${milliseconds}`;
 }
 
 //Format time so it is double-digit
@@ -35,7 +37,7 @@ function start() {
     timerInterval = setInterval(function printTime() {
         elapsedTime = Date.now() - startTime;
         document.getElementById("display").innerHTML = timeToTimerString(elapsedTime);
-    }, 1000);
+    }, 10);
 }
 
 function pause() {
