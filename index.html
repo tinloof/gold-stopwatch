@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Gold Timer built with JS" />
     <title>Gold Stopwatch</title>
     <link rel="stylesheet" href="style.css" />
     <link
@@ -14,77 +13,25 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;1,300&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="icon"
-      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⏳</text></svg>"
-    />
   </head>
 
   <body>
-    <div class="root">
-      <div class="stopwatch">
-        <h1><span class="gold">GOLD</span> STOPWATCH</h1>
-        <div class="circle">
-          <div class="time" id="display">00:00:00</div>
-        </div>
+    <div class="stopwatch">
+      <h1><span class="gold">GOLD</span> STOPWATCH</h1>
+      <div class="circle">
+        <span class="time" id="display">00:00:00</span>
+      </div>
 
-        <div class="controls">
-          <button class="buttonPlay">
-            <svg
-              class="button"
-              id="playButton"
-              width="64"
-              height="64"
-              viewBox="0 0 64 64"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="32" cy="32" r="31.5" stroke="#F2C94C" />
-              <path
-                d="M22.9 16.9108L47.0687 32.2909L22.9 47.671V16.9108Z"
-                stroke="#F2C94C"
-              />
-            </svg>
+      <div class="controls">
+        <button class="buttonPlay">
+          <img id="playButton" src="icons/play-button.svg" />
 
-            <svg
-              class="button"
-              id="pauseButton"
-              width="64"
-              height="64"
-              viewBox="0 0 64 64"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="32" cy="32" r="31.5" stroke="#F2C94C" />
-              <path
-                d="M43.5 17.5V45.6667H36.1667V17.5H43.5ZM26.8333 17.5V45.6667H19.5V17.5H26.8333Z"
-                stroke="#F2C94C"
-              />
-            </svg>
-          </button>
-
-          <button class="buttonReset">
-          <span class="button" id="resetButton"
-            ><svg
-              width="64"
-              height="64"
-              viewBox="0 0 64 64"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="32" cy="32" r="31.5" stroke="#F2F2F2" />
-              <rect
-                x="19.2"
-                y="19.2"
-                width="25.6"
-                height="25.6"
-                fill="#F2F2F2"
-              />
-            </svg>
+          <img id="pauseButton" src="icons/pause-button.svg" />
         </button>
-            </span>
-          </span>
-        </div>
+
+        <button class="buttonReset">
+          <img id="resetButton" src="icons/reset-button.svg" />
+        </button>
       </div>
     </div>
     <script src="script.js"></script>

@@ -1,17 +1,23 @@
-// Convert time to a format of hours, minutes, and seconds
+// Convert time to a format of hours, minutes, seconds, and milliseconds
 
-function timeToTimerString(time) {
-  let diffHours = time / (1000 * 60 * 60);
-  let diffMinutes = (diffHours - Math.floor(diffHours)) * 60;
-  let diffSeconds = (diffMinutes - Math.floor(diffMinutes)) * 60;
-  let diffMilliseconds = (diffSeconds - Math.floor(diffSeconds)) * 100;
+function timeToString(time) {
+  let diffInHrs = time / 3600000;
+  let hh = Math.floor(diffInHrs);
 
-  let hours = formatTwoDigits(Math.floor(diffHours));
-  let minutes = formatTwoDigits(Math.floor(diffMinutes));
-  let seconds = formatTwoDigits(Math.floor(diffSeconds));
-  let milliseconds = formatTwoDigits(Math.floor(diffMilliseconds));
+  let diffInMin = (diffInHrs - hh) * 60;
+  let mm = Math.floor(diffInMin);
 
-  return `${minutes}:${seconds}:${milliseconds}`;
+  let diffInSec = (diffInMin - mm) * 60;
+  let ss = Math.floor(diffInSec);
+
+  let diffInMs = (diffInSec - ss) * 100;
+  let ms = Math.floor(diffInMs);
+
+  let formattedMM = formatTwoDigits(mm);
+  let formattedSS = formatTwoDigits(ss);
+  let formattedMS = formatTwoDigits(ms);
+
+  return `${formattedMM}:${formattedSS}:${formattedMS}`;
 }
 
 // Format time so it is double-digit
@@ -22,21 +28,23 @@ function formatTwoDigits(n) {
 
 // Declare variables to use in our functions below
 
-let timerInterval;
-let elapsedTime = 0;
 let startTime;
+let elapsedTime = 0;
+let timerInterval;
 
-// Create "start", "pause" and "reset" functions
+// Create function to modify innerHTML
 
 function print(txt) {
   document.getElementById("display").innerHTML = txt;
 }
 
+// Create "start", "pause" and "reset" functions
+
 function start() {
   startTime = Date.now() - elapsedTime;
   timerInterval = setInterval(function printTime() {
     elapsedTime = Date.now() - startTime;
-    print(timeToTimerString(elapsedTime));
+    print(timeToString(elapsedTime));
   }, 10);
   showButton("PAUSE");
 }
@@ -50,13 +58,10 @@ function reset() {
   clearInterval(timerInterval);
   print("00:00:00");
   elapsedTime = 0;
+  showButton("PLAY");
 }
 
-// Create variables for the buttons we will click on and create event listeners
-
-let playButton = document.getElementById("playButton");
-let pauseButton = document.getElementById("pauseButton");
-let resetButton = document.getElementById("resetButton");
+// Create function to display buttons
 
 function showButton(buttonKey) {
   const buttonToShow = buttonKey === "PLAY" ? playButton : pauseButton;
@@ -64,13 +69,12 @@ function showButton(buttonKey) {
   buttonToShow.style.display = "block";
   buttonToHide.style.display = "none";
 }
+// Create event listeners
+
+let playButton = document.getElementById("playButton");
+let pauseButton = document.getElementById("pauseButton");
+let resetButton = document.getElementById("resetButton");
 
 playButton.addEventListener("click", start);
-
 pauseButton.addEventListener("click", pause);
-
-document.getElementById("resetButton").addEventListener("click", (e) => {
-  reset();
-  playButton.style.display = "block";
-  pauseButton.style.display = "none";
-});
+resetButton.addEventListener("click", reset);
