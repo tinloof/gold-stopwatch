@@ -13,17 +13,11 @@ function timeToString(time) {
   let diffInMs = (diffInSec - ss) * 100;
   let ms = Math.floor(diffInMs);
 
-  let formattedMM = formatTwoDigits(mm);
-  let formattedSS = formatTwoDigits(ss);
-  let formattedMS = formatTwoDigits(ms);
+  let formattedMM = mm.toString().padStart(2, "0");
+  let formattedSS = ss.toString().padStart(2, "0");
+  let formattedMS = ms.toString().padStart(2, "0");
 
   return `${formattedMM}:${formattedSS}:${formattedMS}`;
-}
-
-// Format time so it is double-digit
-
-function formatTwoDigits(n) {
-  return n < 10 ? (n = "0" + n) : n;
 }
 
 // Declare variables to use in our functions below
